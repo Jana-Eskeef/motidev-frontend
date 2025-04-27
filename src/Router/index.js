@@ -1,13 +1,15 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import Vue from 'vue'
+import VueRouter from 'vue-router'  // Correct import name
 
-import AuthPage from '@/Pages/LoginPage.vue';
-import SignUpPage from '@/Pages/SignPage.vue';
-import Dashboard from '@/Pages/Dashboard.vue'; // صفحة افتراضية بعد تسجيل الدخول
+import AuthPage from '@/Pages/LoginPage.vue'
+import SignUpPage from '@/Pages/SignPage.vue'
+import Dashboard from '@/Pages/Dashboard.vue'
 
-Vue.use(Router);
+// Install the router plugin
+Vue.use(VueRouter)  // Must use VueRouter (the imported name)
 
-export default new Router({
+// Create router instance
+const router = new VueRouter({
   mode: 'history',
   routes: [
     {
@@ -31,4 +33,6 @@ export default new Router({
       meta: { requiresAuth: true }
     }
   ]
-});
+})
+
+export default router

@@ -7,14 +7,18 @@ export default new Vuetify({
   theme: {
     themes: {
       light: {
-        primary: '#5D5FEF', // لون رئيسي أزرق مثلاً (رح نعدله حسب الصورة يلي بعتيها)
-        secondary: '#FFC107', // لون تاني
-        accent: '#82B1FF',
-        error: '#FF5252',
-        info: '#2196F3',
-        success: '#4CAF50',
-        warning: '#FFC107',
-        background: '#F5F7FA' // لون الخلفية العامة
+        primary: '#6A0DAD',       // Deep purple (primary buttons/app bar)
+        secondary: '#9C27B0',     // Medium purple (secondary elements)
+        accent: '#E040FB',        // Bright purple accent (highlights)
+        error: '#FF5252',         // Red (errors)
+        info: '#2196F3',          // Blue (info)
+        success: '#4CAF50',       // Green (success)
+        warning: '#FFC107',       // Amber (warning)
+        background: '#F3E5F5',    // Light purple background (subtle)
+        
+        // Optional: Extra purple shades
+        'purple-lighten-1': '#BA68C8',
+        'purple-darken-1': '#4A148C',
       }
     }
   }
