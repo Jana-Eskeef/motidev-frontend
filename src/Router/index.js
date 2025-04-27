@@ -1,30 +1,34 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Router from 'vue-router';
 
-// استدعاء الصفحات
-import AuthPage from '@/pages/AuthPage.vue';
-import Dashboard from '@/pages/Dashboard.vue';
-import ProjectsPage from '@/pages/ProjectsPage.vue';
-import ChallengesPage from '@/pages/ChallengesPage.vue';
-import ContentPage from '@/pages/ContentPage.vue';
-import FriendsPage from '@/pages/FriendsPage.vue';
-import NotificationsPage from '@/pages/NotificationsPage.vue';
+import AuthPage from '@/Pages/LoginPage.vue';
+import SignUpPage from '@/Pages/SignPage.vue';
+import Dashboard from '@/Pages/Dashboard.vue'; // صفحة افتراضية بعد تسجيل الدخول
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
-const routes = [
-  { path: '/', component: AuthPage },
-  { path: '/dashboard', component: Dashboard },
-  { path: '/projects', component: ProjectsPage },
-  { path: '/challenges', component: ChallengesPage },
-  { path: '/content', component: ContentPage },
-  { path: '/friends', component: FriendsPage },
-  { path: '/notifications', component: NotificationsPage },
-];
-
-const router = new VueRouter({
+export default new Router({
   mode: 'history',
-  routes,
+  routes: [
+    {
+      path: '/',
+      redirect: '/login'
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: AuthPage
+    },
+    {
+      path: '/signup',
+      name: 'SignUp',
+      component: SignUpPage
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard,
+      meta: { requiresAuth: true }
+    }
+  ]
 });
-
-export default router;
